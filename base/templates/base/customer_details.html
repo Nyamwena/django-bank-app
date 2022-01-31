@@ -1,0 +1,41 @@
+{% extends 'nav.html' %}
+
+{% block css %}
+<style>
+#details {
+  background-color: lightgrey;
+  width: auto;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+    text-align: left !important;
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+<h4>Customer Details</h4>
+
+
+<div id="details">
+<span style="font-weight: bold">Name: </span>  {{ customers.customer_id.title  }} {{ "  " }} {{ customers.customer_id.last_name }} {{ " " }} {{ customers.customer_id.first_name }} <br>
+    <hr>
+    <span style="font-weight: bold">National ID Number:</span> {{ customers.customer_id.national_id_number }}  <br>
+    <hr>
+    <span style="font-weight: bold">Phone Number:</span>  {{ customers.customer_id.phone_number }} <br>
+    <hr>
+    <span style="font-weight: bold">Address:</span>  {{ customers.customer_id.address }} <br>
+    <hr>
+
+    <span style="font-weight: bold">Account Number:</span> {{ customers.account_number }}  <br>
+    <hr>
+    <span style="font-weight: bold">Branch Name:</span> {{ customers.branch_name }} <br>
+    <hr>
+    <span style="font-weight: bold">Branch Code:</span> {{ customers.branch_code }} <br>
+
+
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends 'nav.html' %}
+
+{% block css %}
+    <style>
+    #customers {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+
+{% endblock %}
+
+{% block content %}
+<h6>Customer List</h6>
+
+    <table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Action</th>
+  </tr>
+        {% for customer in  customers %}
+
+  <tr>
+    <td> {{ customer.customer_id.first_name  }}</td>
+    <td>{{ customer.customer_id.last_name }}</td>
+    <td>
+       <a href="{% url 'details' customer.customer_id.id %}"> View details </a>
+    </td>
+  </tr>
+{% endfor %}
+
+</table>
+
+
+
+{% endblock content %}
